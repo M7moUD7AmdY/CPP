@@ -1,8 +1,4 @@
-/*********************************************************************/
-/* Project : Hospitals and Patients Data Base and Management System  */
-/* Auther  : Ahmed Bahaa Nasr                                        */ 
-/* Date    : 14/5/2023                                               */ 
-/*********************************************************************/
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -69,19 +65,15 @@ void ShowSpecificHospital(void);
 void EditSpecificHospital (void);
 void ShowSpecificPatient(void);
 void EditSpecificPatient(void);
-/*===================================================================*/
-/*===================    main Application     =======================*/
-/*===================================================================*/
+
+
+
 int main()
 {
     cout << endl ;
-    cout << "******************************************" << endl ;
-    cout << "******************************************" << endl ;
+   
     cout << "**    Welcome to My Hospitals System    **" << endl ;
-    cout << "**      Auther : Ahmed Bahaa Nasr       **" << endl ;
-    cout << "**      Embedded Software Engineer      **" << endl ;
-    cout << "******************************************" << endl ;
-    cout << "******************************************" << endl ;
+     cout << endl ;
 
     InitHospitals_DataBase();
     InitPatients_DataBase();
@@ -92,13 +84,9 @@ int main()
         
         if ( Feature == 0 )
         {
-            cout << "******************************************" << endl ;
-            cout << "******************************************" << endl ;
-            cout << "******************************************" << endl ;
+       
             cout << "**********      Good Bay       ***********" << endl ;
-            cout << "******************************************" << endl ;
-            cout << "******************************************" << endl ;
-            cout << "******************************************" << endl ;
+          
             break ;
         }
         else if ( Feature == 1  )
@@ -231,9 +219,10 @@ int main()
     return 0 ;
 }
 
-/*=================================================================================================*/
-/*===================           Features Functions Implementation           =======================*/
-/*=================================================================================================*/
+
+
+
+
 void InitHospitals_DataBase (void)
 {
     H1.H_Name = "H1" ;
@@ -538,9 +527,8 @@ void Hospital::Increment_AvailableBeds (void)
     H_Available_Beds ++ ;
 }
 
-/*=================================================================================================*/
-/*===================     Patient Class Public Functions Implementation     =======================*/
-/*=================================================================================================*/
+
+
 void Patient::SetPatient_ID(int Copy_ID)
 {
     if( Copy_ID <= 9999 )
@@ -586,10 +574,10 @@ string Patient::GetPatient_AllocatedHospital(void)
 }
 void Patient::Show_PatientData(void)
 {
-    cout << "  " << P_Name              << "   |   " ;
+    cout << "  " << P_Name      << "   |   " ;
     cout << P_ID                << "   |   " ;
     cout << P_Phone             << "   |   " ;
     cout << P_Age               << "   |   " ;
-    cout << P_Gender            << "   |         " ;
+    cout << P_Gender            << "   |   " ;
     cout << P_AllocatedHospital <<  endl  ;
 }
