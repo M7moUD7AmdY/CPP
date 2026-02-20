@@ -1,0 +1,4 @@
+Baudrate     : 19600
+Parity       : even
+Stop Bits    : 1
+Slave Address: 50
