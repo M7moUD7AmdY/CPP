@@ -2,26 +2,21 @@
 #include <string>
 #include <cstring>
 using namespace std ;
-
-
 string format_str(string str)
 {
-   int counter = 0;
-
-    for (int i = str.length() - 1; i >= 0; i--)
+    int counter=0;
+for(int i=str.size()-3;i>0;i--,counter++)
+{
+    if (counter%3==0 && i!=0)
     {
-        counter++;
-
-        if (counter == 3 && i != 0)
-        {
-            str.insert(i, ",");
-            counter = 0;
-        }
-    }
-
-    return str;
-
+        str.insert(i , ",");
+    } 
 }
+return str;
+}
+
+
+
 
 int main()
 {
@@ -37,7 +32,7 @@ int main()
     // //find
 
     // cout<< s.find('o')<<endl;
-    cout<<format_str("1234567")<<endl;
+    cout<<format_str("12349890873367733324555634567")<<endl;
 
 
     return 0;
