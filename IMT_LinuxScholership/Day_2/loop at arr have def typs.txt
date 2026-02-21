@@ -1,4 +1,0 @@
-loop at arr have def typs
-loop on struct mem
-float bit mnabolate
-###################
