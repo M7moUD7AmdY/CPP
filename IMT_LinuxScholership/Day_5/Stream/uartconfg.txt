@@ -1,4 +1,4 @@
 baudrate=19600
-parity=even
+parity=1
 stopbits=1
 slaveaddress=50
