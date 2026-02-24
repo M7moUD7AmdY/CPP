@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <string>
 
 using namespace std;
 
@@ -26,10 +27,17 @@ int main()
         else if (command == "insert")
         {
             string token;
-            ss >> token;        // example: 5@2
+            ss >> token;        
 
             int value, index;
-            sscanf(token.c_str(), "%d@%d", &value, &index);
+            
+            int pos=token.find_first_of('@');
+            value=stoi(token.substr(0,pos));
+            index=stoi(token.substr(pos+1));
+
+            
+            
+            // sscanf(token.c_str(), "%d@%d", &value, &index);
 
             if (index >= 0 && index <= v.size())
                 v.insert(v.begin() + index, value);
