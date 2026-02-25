@@ -274,14 +274,11 @@ void FindCar(string plate)
     cout << "Car not found in system.\n";
 }
 
-#include <iomanip>
 
-// 1) find car: search active then history
 void findCar(std::string plate)
 {
-    cout << "\n===== FIND CAR =====\n";
 
-    // search in active sessions
+    // active sessions
     auto it = ActiveSession.find(plate);
     if (it != ActiveSession.end())
     {
@@ -308,11 +305,10 @@ void findCar(std::string plate)
     cout << "Car not found.\n";
 }
 
-// 2) show current cars (active)
 void showCurrenyCars() // avtive
 {
-    cout << "\n===== CURRENT CARS (ACTIVE) =====\n";
 
+    
     if (ActiveSession.empty())
     {
         cout << "No cars currently parked.\n";
@@ -340,10 +336,8 @@ void showCurrenyCars() // avtive
     }
 }
 
-// 3) show car history (all receipts for plate)
 void showCarhistory(std::string plate) //
 {
-    cout << "\n===== CAR HISTORY =====\n";
 
     auto hit = History.find(plate);
     if (hit == History.end() || hit->second.empty())
@@ -382,20 +376,15 @@ void showCarhistory(std::string plate) //
     }
 }
 
-// 4) show daily report (summary)
 void showDailyPeport()
 {
-    cout << "\n===== DAILY REPORT =====\n";
 
-    // count free spots
     int freeCount = 0;
     for (const auto &p : Spots)
         if (p.second) freeCount++;
 
-    // count current cars
     int activeCount = (int)ActiveSession.size();
 
-    // count total visits (all receipts)
     int totalReceipts = 0;
     for (const auto &h : History)
         totalReceipts += (int)h.second.size();
@@ -407,7 +396,8 @@ void showDailyPeport()
     cout << "Total Visits    : " << totalReceipts << "\n";
     cout << "Total Revenue   : " << fixed << setprecision(1) << TotalRevenue << " EGP\n";
 
-    cout << "\n--- Hourly Traffic ---\n";
+    
+    
     if (HourlyTraffic.empty())
     {
         cout << "No traffic data.\n";
