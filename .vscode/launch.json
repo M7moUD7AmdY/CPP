@@ -13,7 +13,6 @@
       "MIMode": "gdb",
       "miDebuggerPath": "gdb.exe",
       "preLaunchTask": "build active file (g++)"
-
     },
     {
       "name": "C/C++ Runner: Debug Session",
@@ -22,8 +21,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "f:/My Learn/IMT_Scholership",
-      "program": "f:/My Learn/IMT_Scholership/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
