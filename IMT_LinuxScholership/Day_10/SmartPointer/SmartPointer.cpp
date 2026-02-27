@@ -10,11 +10,29 @@ int main()
 {
     int x=1;
     
-    unique_ptr<int>un_intptr=make_unique<int>(x);
+    unique_ptr<int>uptr=make_unique<int>(x);
+    unique_ptr<int>uptr2;
+    shared_ptr<int>sptr=make_shared<int>(x);
+        shared_ptr<int>sptr2=sptr;
 
-    cout<<*un_intptr<<endl;
-    cout<<un_intptr.get()<<endl;
 
+    cout<<sptr.use_count()<<endl;
+
+
+
+
+
+    cout<<*uptr<<endl;
+    cout<<uptr.get()<<endl;
+    cout<< string(50,'-')<<endl;
+
+    uptr2=move(uptr);
+    // cout<<*uptr<<endl;             //cant accses the ptr after move its dangling now
+    // cout<<uptr.get()<<endl;
+
+    // cout<< string(50,'-')<<endl;
+    cout<<*uptr2<<endl;
+    cout<<uptr2.get()<<endl;
 
 
 
