@@ -1,0 +1,6 @@
+write 5@0 // modify index 0 to be 5
+read 0 // should print the value at index 0
+append 40
+erase 2 // remove element @ index 2
+insert 5@2
+create 10 20 30

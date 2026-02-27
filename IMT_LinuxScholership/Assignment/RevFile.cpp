@@ -5,14 +5,14 @@ using namespace std;
 
 int main()
 {
-    ifstream inFile("input.txt", ios::binary);
+    ifstream inFile("Input.txt", ios::binary);
     if (!inFile)
     {
         cerr << "Failed to open input file\n";
         return 1;
     }
 
-    ofstream outFile("output.txt", ios::binary);
+    ofstream outFile("Output.txt", ios::binary);
     if (!outFile)
     {
         cerr << "Failed to open output file\n";

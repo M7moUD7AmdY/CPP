@@ -1,22 +1,31 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <numeric>   // for accumulate
+#include <algorithm>
+#include <sstream>
+
+
 using namespace std;
 
 
-int main(int argc,char* argv[])
+int main()
 {
+    vector<string> v;
+    string line,token;
+    getline(cin,line);
+    stringstream ss(line);
 
-    vector <string> vec;
-    for(int i=1;i<argc;i++)
-    {
-        vec.push_back(argv[i]);
-    }
-
-   for(auto it=vec.rbegin();it!=vec.rend();++it)
+   while( getline(ss,token,' '))
    {
-    cout<<*it<<" ";
+    
+     v.push_back(token);
+   }
+   reverse(v.begin(),v.end());
+
+   for(string str:v)
+   {
+    cout<<str<<" ";
+
    }
 
     

@@ -4,23 +4,27 @@
 #include <numeric>   // for accumulate
 using namespace std;
 
-string join(string acc, string next)
+string joinfunc(string acc,string next)
 {
-    if (acc.empty())
-        return next;          // first element (no comma)
-    return acc + "," + next;  // add comma before next
+    if(acc.empty())return next;
+
+    return (acc +','+next);
+
 }
+
 
 int main()
 {
-    vector<string> csv_line = {"name", "age", "Len"};
+    vector<string>v={"Mr","Mahmoud","Hamdi","Rashed"};
 
-    string joined = accumulate(csv_line.begin(), 
-                               csv_line.end(), 
-                               string(), 
-                               join);
+    vector<int> vec={1,2,3,4,5,6};
 
-    cout << joined << endl;
+    int sum=accumulate(vec.begin(),vec.end(),0,[](int a, int b){return a+b;});
+    cout<<sum<<endl;
 
+    string out=accumulate(v.begin(),v.end(),string(),joinfunc);
+    cout << out << endl;
+   
+    
     return 0;
 }
